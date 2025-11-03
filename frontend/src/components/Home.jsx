@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { ChevronRight, Sparkles, Zap, Globe, ArrowRight } from 'lucide-react';
 import './Home.css';
+import logoIcon from '../assets/logo-icon-transparent.png';
 
 const Home = () => {
   const canvasRef = useRef(null);
@@ -110,7 +111,7 @@ const Home = () => {
           {/* Badge */}
           <div className="hero-badge">
             <Sparkles className="badge-icon" size={16} />
-            <span>Welcome to the Future of Digital Innovation</span>
+            <span>Engineering the next step in Digital Evolution!</span>
           </div>
 
           {/* Main Title with Logo Integration */}
@@ -119,32 +120,32 @@ const Home = () => {
               <span className="title-text">Transform Your</span>
             </span>
             <span className="title-line">
-              <span className="title-text">Digital Presence</span>
-              <div className="inline-logo">
+              <span className="title-text">Digital World</span>
+        {/*      <div className="inline-logo">
                 <img 
-                  src="/api/placeholder/64/64" 
+                  src={logoIcon} 
                   alt="Soumora Logo" 
                   className="inline-logo-img"
                 />
-              </div>
+              </div> */}
             </span>
             <span className="title-line">
-              <span className="title-text gradient-text">With Soumora</span>
+              With <span className="title-text gradient-text">SUOMORΛ</span>
             </span>
           </h1>
 
           {/* Subtitle */}
           <p className="hero-subtitle">
-            Elevate your business with cutting-edge web solutions, innovative design, 
-            and powerful technology that drives real results. We don't just build websites—we 
-            craft digital experiences that captivate and convert.
+            We are dedicated to elevate your business by combining strategic design with reliable solutions 
+            to drive real results. We move beyond building simple digital assets to craft the defining experiences
+            for your brand's future.
           </p>
-
-          {/* Stats */}
+          
+          {/* Stats 
           <div className="hero-stats">
             <div className="stat-item">
-              <div className="stat-number">500+</div>
-              <div className="stat-label">Projects Delivered</div>
+              <div className="stat-number">ROI</div>
+              <div className="stat-label">Focused Solutions</div>
             </div>
             <div className="stat-divider"></div>
             <div className="stat-item">
@@ -153,11 +154,11 @@ const Home = () => {
             </div>
             <div className="stat-divider"></div>
             <div className="stat-item">
-              <div className="stat-number">50+</div>
-              <div className="stat-label">Team Experts</div>
+              <div className="stat-number">1:1</div>
+              <div className="stat-label">Partner-led Projects</div>
             </div>
           </div>
-
+            */}
           {/* CTA Buttons */}
           <div className="hero-buttons">
             <button className="hero-btn-primary" onClick={() => scrollToSection('contact')}>
@@ -194,7 +195,7 @@ const Home = () => {
             <div className="logo-card main-card">
               <div className="card-glow"></div>
               <img 
-                src="/api/placeholder/200/200" 
+                src={logoIcon}
                 alt="Soumora" 
                 className="logo-card-img"
               />

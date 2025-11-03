@@ -122,12 +122,18 @@
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #60a5fa 100%);
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #93c5fd 100%);
+
   background-size: 200% 200%;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradientShift 3s ease infinite;
+  letter-spacing: 0.1em;
+  
+  font-family: 'Open Sans', sans-serif; 
+  font-weight: 600;
+
 }
 
 /* Inline Logo */
@@ -176,7 +182,7 @@
 }
 
 .stat-number {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 800;
   background: linear-gradient(135deg, #60a5fa, #a78bfa);
   background-clip: text;
@@ -324,19 +330,19 @@
 /* Main Logo Card */
 .logo-card {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 0%;
+  left: 0%;
   transform: translate(-50%, -50%);
-  width: 16rem;
-  height: 16rem;
+  width: 46rem;
+  height: 46rem;
   border-radius: 2rem;
-  background: linear-gradient(135deg, #1e293b, #334155);
+  /* background: linear-gradient(135deg, #1e293b, #334155);*/
   display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.5);
+ /* align-items: center; 
+  justify-content: center; */
+ /* box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.5);*/
   animation: float 6s ease-in-out infinite;
-  border: 0.0625rem solid rgba(59, 130, 246, 0.2);
+ /* border: 0.0625rem solid rgba(59, 130, 246, 0.2); */
   z-index: 2;
 }
 
@@ -344,8 +350,8 @@
   position: absolute;
   inset: -0.125rem;
   border-radius: 2rem;
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
-  background-size: 200% 200%;
+ /* background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4); */
+  background-size: 200% 200%; 
   opacity: 0.5;
   filter: blur(1.25rem);
   animation: gradientShift 3s ease infinite;

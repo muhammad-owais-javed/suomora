@@ -33,11 +33,11 @@ const Header = () => {
       name: 'Services', 
       path: 'services',
       dropdown: [
-        { name: 'UI/UX Design', desc: 'Modern user interfaces' },
-        { name: 'Application Development', desc: 'Custom web solutions' },
-        { name: 'Migration Services', desc: 'Web hosting migration' },
-        { name: 'Cloud Consultancy', desc: 'Scalable cloud infrastructure' },
-        { name: 'Cybersecurity', desc: 'Data protection & compliance' }
+        { name: 'UI/UX Design', desc: 'Modern User Interfaces' },
+        { name: 'Application Development', desc: 'Custom Web Solutions' },
+        { name: 'Migration Services', desc: 'Web Hosting Migration' },
+        { name: 'Cloud Consultancy', desc: 'Scalable Cloud Infrastructure' },
+        { name: 'Cybersecurity', desc: 'Data Protection & Compliance' }
       ]
     },
     { 
