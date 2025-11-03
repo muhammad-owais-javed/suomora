@@ -1,46 +1,221 @@
-// src/components/Services.jsx
-import React from 'react';
-import { Code, Smartphone, Globe, Zap } from 'lucide-react';
-import './Services.css'; // Import the CSS for this component
+// Services.jsx
+import React, { useState, useEffect, useRef } from 'react';
+import { 
+  Palette, 
+  Code2, 
+  RefreshCw, 
+  Cloud, 
+  Shield, 
+  ArrowRight,
+  Sparkles,
+  CheckCircle2
+} from 'lucide-react';
+import './Services.css';
 
 const Services = () => {
-  const servicesList = [
+  const [activeService, setActiveService] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  const services = [
     {
-      icon: <Code size={40} />,
-      title: 'Web Development',
-      description: 'Custom websites and full stack web applications development.'
+      id: 1,
+      name: 'UI/UX Design',
+      desc: 'Modern User Interfaces',
+      icon: Palette,
+      color: '#3b82f6',
+      gradient: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
+      details: 'Create stunning, intuitive designs that captivate users and drive engagement.',
+      features: [
+        'User Research & Testing',
+        'Wireframing & Prototyping',
+        'Responsive Design Systems',
+        'Brand Identity Design'
+      ]
     },
     {
-      icon: <Smartphone size={40} />,
-      title: 'Hosing and Web Migration',
-      description: 'Providing full scale hosting and migration services for your web application.'
+      id: 2,
+      name: 'Application Development',
+      desc: 'Custom Web Solutions',
+      icon: Code2,
+      color: '#8b5cf6',
+      gradient: 'linear-gradient(135deg, #8b5cf6, #ec4899)',
+      details: 'Build powerful, scalable applications tailored to your business needs.',
+      features: [
+        'Full-Stack Development',
+        'API Integration',
+        'Progressive Web Apps',
+        'E-commerce Solutions'
+      ]
     },
     {
-      icon: <Globe size={40} />,
-      title: 'Cloud Consulting',
-      description: 'Comprehensive digital solutions to elevate your online presence.'
+      id: 3,
+      name: 'Migration Services',
+      desc: 'Web Hosting Migration',
+      icon: RefreshCw,
+      color: '#ec4899',
+      gradient: 'linear-gradient(135deg, #ec4899, #f43f5e)',
+      details: 'Seamlessly migrate your applications with zero downtime and data integrity.',
+      features: [
+        'Zero-Downtime Migration',
+        'Data Backup & Recovery',
+        'Platform Migration',
+        'Post-Migration Support'
+      ]
     },
     {
-      icon: <Zap size={40} />,
-      title: 'Performance Optimization',
-      description: 'Lightning-fast websites optimized for speed and user experience.'
+      id: 4,
+      name: 'Cloud Consultancy',
+      desc: 'Scalable Cloud Infrastructure',
+      icon: Cloud,
+      color: '#06b6d4',
+      gradient: 'linear-gradient(135deg, #06b6d4, #3b82f6)',
+      details: 'Optimize your infrastructure with expert cloud architecture and strategy.',
+      features: [
+        'Cloud Strategy Planning',
+        'AWS/Azure/GCP Solutions',
+        'Cost Optimization',
+        'DevOps Implementation'
+      ]
+    },
+    {
+      id: 5,
+      name: 'Cybersecurity',
+      desc: 'Data Protection & Compliance',
+      icon: Shield,
+      color: '#f59e0b',
+      gradient: 'linear-gradient(135deg, #f59e0b, #ef4444)',
+      details: 'Protect your digital assets with enterprise-grade security solutions.',
+      features: [
+        'Security Audits',
+        'Penetration Testing',
+        'Compliance Management',
+        '24/7 Threat Monitoring'
+      ]
     }
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section id="services" className="services-section">
-      <div className="container">
-        <h2 className="section-title">Our Services</h2>
-        <p className="section-subtitle">Comprehensive solutions tailored to your needs.</p>
-        
-        <div className="services-grid">
-          {servicesList.map((service, index) => (
-            <div key={index} className="service-card">
-              <div className="service-icon">{service.icon}</div>
-              <h3 className="service-title">{service.title}</h3>
-              <p className="service-description">{service.description}</p>
-            </div>
-          ))}
+    <section 
+      id="services" 
+      className="services-section"
+      ref={sectionRef}
+    >
+      {/* Decorative Background Elements */}
+      <div className="services-bg-pattern"></div>
+      <div className="services-gradient-orb orb-left"></div>
+      <div className="services-gradient-orb orb-right"></div>
+
+      <div className="services-container">
+        {/* Section Header */}
+        <div className={`services-header ${isVisible ? 'visible' : ''}`}>
+          <div className="section-badge">
+            <Sparkles size={16} />
+            <span>What We Offer</span>
+          </div>
+          <h2 className="section-title">
+            Comprehensive Digital
+            <span className="title-highlight"> Solutions</span>
+          </h2>
+          <p className="section-description">
+            From concept to deployment, we deliver end-to-end services that transform 
+            your digital vision into reality with cutting-edge technology and expert craftsmanship.
+          </p>
+        </div>
+
+        {/* Services Grid */}
+        <div className={`services-grid ${isVisible ? 'visible' : ''}`}>
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            return (
+              <div
+                key={service.id}
+                className={`service-card ${activeService === index ? 'active' : ''}`}
+                onMouseEnter={() => setActiveService(index)}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="card-background">
+                  <div 
+                    className="card-gradient" 
+                    style={{ background: service.gradient }}
+                  ></div>
+                </div>
+
+                <div className="card-content">
+                  {/* Icon */}
+                  <div 
+                    className="service-icon"
+                    style={{ background: service.gradient }}
+                  >
+                    <Icon size={28} />
+                  </div>
+
+                  {/* Service Info */}
+                  <div className="service-info">
+                    <h3 className="service-name">{service.name}</h3>
+                    <p className="service-desc">{service.desc}</p>
+                  </div>
+
+                  {/* Service Details */}
+                  <p className="service-details">{service.details}</p>
+
+                  {/* Features List */}
+                  <ul className="service-features">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="feature-item">
+                        <CheckCircle2 size={16} className="feature-check" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* CTA Button */}
+                  <button className="service-btn">
+                    <span>Learn More</span>
+                    <ArrowRight size={18} className="btn-arrow" />
+                  </button>
+                </div>
+
+                {/* Hover Effect Overlay */}
+                <div className="card-shine"></div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className={`services-cta ${isVisible ? 'visible' : ''}`}>
+          <div className="cta-content">
+            <h3 className="cta-title">Ready to Transform Your Business?</h3>
+            <p className="cta-description">
+              Let's discuss how our services can help you achieve your digital goals.
+            </p>
+          </div>
+          <button className="cta-button">
+            <span>Schedule a Consultation</span>
+            <ArrowRight size={20} />
+          </button>
         </div>
       </div>
     </section>
