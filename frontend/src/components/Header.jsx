@@ -1,7 +1,7 @@
 // Header.jsx
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Search, Mail } from 'lucide-react';
-import logoIcon from '../assets/logo-icon.png';
+import logoIcon from '../assets/logo-icon-transparent.png';
 import './Header.css';
 
 const Header = () => {
@@ -33,51 +33,43 @@ const Header = () => {
       name: 'Services', 
       path: 'services',
       dropdown: [
-        { name: 'Web Development', desc: 'Custom web solutions' },
-        { name: 'Mobile Apps', desc: 'iOS & Android development' },
-        { name: 'Cloud Services', desc: 'Scalable infrastructure' },
-        { name: 'UI/UX Design', desc: 'User-centered design' }
+        { name: 'UI/UX Design', desc: 'Modern user interfaces' },
+        { name: 'Application Development', desc: 'Custom web solutions' },
+        { name: 'Migration Services', desc: 'Web hosting migration' },
+        { name: 'Cloud Consultancy', desc: 'Scalable cloud infrastructure' },
+        { name: 'Cybersecurity', desc: 'Data protection & compliance' }
       ]
     },
     { 
       name: 'Products', 
       path: 'products',
       dropdown: [
-        { name: 'Enterprise Suite', desc: 'Complete business solution' },
-        { name: 'Analytics Platform', desc: 'Data-driven insights' },
-        { name: 'Developer Tools', desc: 'Build faster' },
-        { name: 'Integration Hub', desc: 'Connect everything' }
+        { name: '', desc: 'Coming Soon!' }
+      /*  { name: 'Developer Tools', desc: 'API & Resources' },  */
       ]
     },
     { 
       name: 'Solutions', 
       path: 'solutions',
       dropdown: [
-        { name: 'For Startups', desc: 'Scale your business' },
+        { name: '', desc: 'In Progress!' }
+      /*  { name: 'For Startups', desc: 'Scale your business' },
         { name: 'For Enterprise', desc: 'Enterprise-grade solutions' },
         { name: 'For Agencies', desc: 'White-label services' },
-        { name: 'For E-commerce', desc: 'Online store solutions' }
-      ]
+        { name: 'For E-commerce', desc: 'Online store solutions' }  */
+      ] 
     },
     { 
       name: 'About', 
       path: 'about',
       dropdown: [
         { name: 'Our Story', desc: 'Learn about us' },
-        { name: 'Team', desc: 'Meet the experts' },
         { name: 'Careers', desc: 'Join our team' },
-        { name: 'Press', desc: 'Latest news' }
       ]
     },
     { 
       name: 'Resources', 
       path: 'resources',
-      dropdown: [
-        { name: 'Documentation', desc: 'Technical guides' },
-        { name: 'Blog', desc: 'Latest insights' },
-        { name: 'Case Studies', desc: 'Success stories' },
-        { name: 'Support', desc: 'Get help' }
-      ]
     },
   ];
 
@@ -91,11 +83,11 @@ const Header = () => {
               <div className="logo-image">
                 <img 
                   src={logoIcon}  
-                  alt="Soumora Logo" 
+                  alt="Suomora Logo" 
                   className="logo-img"
                 />
               </div>
-              <span className="logo-text">Soumora</span>
+              <span className="logo-text">SUOMORΛ</span>
             </div>
 
             {/* Desktop Navigation */}
