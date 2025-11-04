@@ -583,6 +583,11 @@
     gap: 3rem;
   }
 
+  .hero-section {
+    min-height: auto; 
+    height: auto;
+    padding-bottom: 8rem;  }
+
   .hero-title {
     font-size: 3rem;
   }
@@ -606,11 +611,19 @@
   .element-desc {
     font-size: 0.625rem;
   }
+   .logo-card {
+    width: 36rem;
+    height: 36rem;
+  }
+
 }
+
+
 
 @media (max-width: 48rem) {
   .hero-section {
     padding: 6rem 1rem 3rem;
+    padding-bottom: 8rem
   }
 
   .hero-title {
@@ -647,8 +660,9 @@
   }
 
   .logo-card {
-    width: 12rem;
-    height: 12rem;
+    width: 32rem;
+    height: 32rem;
+    left: -10%;
   }
 
   .floating-element {
@@ -657,6 +671,13 @@
 
   .gradient-orb {
     opacity: 0.2;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem; /* This should now work correctly */
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 

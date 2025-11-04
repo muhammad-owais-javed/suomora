@@ -88,11 +88,26 @@ const Services = () => {
       details: 'Protect your digital assets with enterprise-grade security solutions.',
       features: [
         'Security Audits',
-        'Penetration Testing',
+        'Vulnerability Assessments',
         'Compliance Management',
         '24/7 Threat Monitoring'
       ]
-    }
+    },
+    {
+      id: 6,
+      name: 'IT Consulting',
+      desc: 'Strategic Technology Advisory',
+      icon: Sparkles,
+      color: '#10b981',
+      gradient: 'linear-gradient(135deg, #10b981, #06b6d4)',
+      details: 'Transform your business with expert IT strategy and digital transformation consulting.',
+      features: [
+        'Digital Transformation',
+        'Technology Roadmapping',
+        'System Architecture Design',
+        'IT Cost Optimization'
+      ]
+    },
   ];
 
   useEffect(() => {
@@ -135,12 +150,11 @@ const Services = () => {
             <span>What We Offer</span>
           </div>
           <h2 className="section-title">
-            Comprehensive Digital
-            <span className="title-highlight"> Solutions</span>
+            <span className="title-highlight">IT Services, Solutions & Consultancy</span>
           </h2>
           <p className="section-description">
-            From concept to deployment, we deliver end-to-end services that transform 
-            your digital vision into reality with cutting-edge technology and expert craftsmanship.
+            From concept to deployment, we deliver end-to-end IT services, solutions & consultancy to
+            transform your digital vision into reality.
           </p>
         </div>
 

@@ -113,7 +113,7 @@
 /* Services Grid */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   opacity: 0;
   transform: translateY(2rem);
@@ -418,20 +418,51 @@
 }
 
 /* Responsive Design */
-@media (max-width: 64rem) {
+
+/* Large Tablets and Small Desktops */
+@media (max-width: 1280px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+  }
+}
+
+/* Tablets and iPads */
+@media (max-width: 1024px) {
+  .services-section {
+    padding: 5rem 1.25rem;
+  }
+
+  .services-container {
+    gap: 3.5rem;
+  }
+
   .section-title {
     font-size: 2.75rem;
   }
 
+  .section-description {
+    font-size: 1.0625rem;
+  }
+
   .services-grid {
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+  }
+
+  .service-card {
+    padding: 1.75rem;
   }
 
   .services-cta {
     flex-direction: column;
     text-align: center;
     padding: 2.5rem;
+    gap: 1.5rem;
   }
 
   .cta-button {
@@ -440,7 +471,8 @@
   }
 }
 
-@media (max-width: 48rem) {
+/* Mobile and Small Tablets */
+@media (max-width: 768px) {
   .services-section {
     padding: 4rem 1rem;
   }
@@ -449,12 +481,19 @@
     gap: 3rem;
   }
 
+  .section-badge {
+    font-size: 0.8125rem;
+    padding: 0.5625rem 1.125rem;
+  }
+
   .section-title {
     font-size: 2.25rem;
+    line-height: 1.3;
   }
 
   .section-description {
     font-size: 1rem;
+    line-height: 1.7;
   }
 
   .services-grid {
@@ -475,6 +514,23 @@
     font-size: 1.25rem;
   }
 
+  .service-desc {
+    font-size: 0.8125rem;
+  }
+
+  .service-details {
+    font-size: 0.9375rem;
+  }
+
+  .feature-item {
+    font-size: 0.875rem;
+  }
+
+  .service-btn {
+    padding: 0.8125rem 1.375rem;
+    font-size: 0.9375rem;
+  }
+
   .cta-title {
     font-size: 1.5rem;
   }
@@ -486,22 +542,148 @@
   .services-cta {
     padding: 2rem 1.5rem;
   }
+
+  .cta-button {
+    padding: 0.9375rem 1.75rem;
+    font-size: 0.9375rem;
+  }
 }
 
-@media (max-width: 30rem) {
+/* Small Mobile Devices (iPhones, etc.) */
+@media (max-width: 480px) {
+  .services-section {
+    padding: 3rem 0.875rem;
+  }
+
+  .services-container {
+    gap: 2.5rem;
+  }
+
+  .section-badge {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+    gap: 0.375rem;
+  }
+
   .section-title {
     font-size: 1.875rem;
+    line-height: 1.3;
+    margin-bottom: 1.25rem;
+  }
+
+  .section-description {
+    font-size: 0.9375rem;
+    line-height: 1.65;
   }
 
   .services-grid {
-    gap: 1rem;
+    gap: 1.25rem;
   }
 
   .service-card {
     padding: 1.25rem;
+    border-radius: 1.25rem;
+  }
+
+  .service-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.875rem;
+  }
+
+  .service-info {
+    gap: 0.375rem;
+  }
+
+  .service-name {
+    font-size: 1.125rem;
+  }
+
+  .service-desc {
+    font-size: 0.75rem;
+  }
+
+  .service-details {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .service-features {
+    gap: 0.625rem;
+  }
+
+  .feature-item {
+    font-size: 0.8125rem;
+    gap: 0.625rem;
+  }
+
+  .service-btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+    gap: 0.375rem;
+  }
+
+  .services-cta {
+    padding: 1.75rem 1.25rem;
+    border-radius: 1.5rem;
+    gap: 1.25rem;
   }
 
   .cta-title {
     font-size: 1.25rem;
+    line-height: 1.3;
+  }
+
+  .cta-description {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+
+  .cta-button {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.875rem;
+    gap: 0.5rem;
+  }
+
+  .services-gradient-orb {
+    width: 18rem;
+    height: 18rem;
+    filter: blur(4.5rem);
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 360px) {
+  .services-section {
+    padding: 2.5rem 0.75rem;
+  }
+
+  .section-title {
+    font-size: 1.625rem;
+  }
+
+  .section-description {
+    font-size: 0.875rem;
+  }
+
+  .service-card {
+    padding: 1rem;
+  }
+
+  .service-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .service-name {
+    font-size: 1rem;
+  }
+
+  .cta-title {
+    font-size: 1.125rem;
+  }
+
+  .cta-description {
+    font-size: 0.875rem;
   }
 }
