@@ -521,7 +521,7 @@
 
 .social-link {
   display: flex;
-  align-items: center;
+  align-items: center; 
   gap: 0.5rem;
   padding: 0.875rem 1.5rem;
   background: #ffffff;
@@ -531,6 +531,8 @@
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
+
+  
 }
 
 .social-link:hover {
@@ -551,6 +553,10 @@
 .social-link.github:hover {
   border-color: #333333;
   color: #333333;
+}
+
+.social-link svg {
+  flex-shrink: 0; /* Prevents the icon from shrinking if the text is long */
 }
 
 /* Bottom CTA */

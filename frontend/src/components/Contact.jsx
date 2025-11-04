@@ -8,7 +8,6 @@ import {
   MessageSquare,
   Clock,
   Globe,
-  Linkedin,
   Twitter,
   Github,
   Copy,
@@ -16,6 +15,25 @@ import {
 } from 'lucide-react';
 
 //import { Linkedin, Facebook, Github, Twitter, Instagram } from 'react-simple-icons';
+
+const LinkedinIcon = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect width="4" height="12" x="2" y="9" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+ );
 
 import './Contact.css';
 
@@ -254,8 +272,8 @@ const Contact = () => {
               rel="noopener noreferrer"
               className="social-link linkedin"
             >
-              <Linkedin size={24} />
-              <span>LinkedIn</span>
+              <LinkedinIcon size={24} /> 
+
             </a>
           {/*  <a 
               href="https://twitter.fi" 
